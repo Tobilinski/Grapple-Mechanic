@@ -8,6 +8,8 @@ public class Move : MonoBehaviour
     private float speed = 10f;
     private Rigidbody rb;
     private float jumpForce = 10f;
+    public Transform groundchecker;
+    public LayerMask ground;
 
     private void Awake()
     {
@@ -26,12 +28,12 @@ public class Move : MonoBehaviour
         // Calculate the movement vector in world space
         Vector3 movement = new Vector3(_Direction.x, 0f, _Direction.y);
         movement = Quaternion.FromToRotation(Vector3.forward, forwardDirection) * movement;
-
+        
         if (_Direction != Vector2.zero)
         {
             rb.velocity = new Vector3(movement.x * speed, rb.velocity.y, movement.z * speed);
         }
-
+        
         if (!checkGround())
         {
             rb.drag = 0f;
@@ -63,11 +65,10 @@ public class Move : MonoBehaviour
     bool checkGround()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.1f))
+        if (Physics.SphereCast(groundchecker.position, 1f, Vector3.down, out hit, 1f))
         {
             if (hit.collider.CompareTag("Ground"))
             {
-                print("Grounded");
                 return true;
             }
         }

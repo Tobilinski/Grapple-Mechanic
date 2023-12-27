@@ -261,7 +261,7 @@ Rigidbody:
   m_GameObject: {fileID: 420050826}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 1
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -360,11 +360,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420050826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.72, y: 11.09, z: 5.4}
+  m_LocalPosition: {x: 21.72, y: 11.33, z: 5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
+  - {fileID: 1222003313}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -474,6 +475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea656e2c08cc0454098135910a5d1e3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundchecker: {fileID: 1222003313}
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &420050834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,10 +497,10 @@ MonoBehaviour:
   Camera: {fileID: 963194228}
   Gunpoint: {fileID: 1383018295}
   RangeOfGun: 25
-  SpringForce: 8
-  Damper: 2
+  SpringForce: 10
+  Damper: 1
   MassScale: 5
-  MaxDistance: 0.8
+  MaxDistance: 0.7
   MinDistance: 0.2
 --- !u!120 &420050835
 LineRenderer:
@@ -1138,7 +1143,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 76.4
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1289,6 +1294,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1222003312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222003313}
+  m_Layer: 0
+  m_Name: GorundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222003313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222003312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.64, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 420050831}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253149042
 GameObject:
