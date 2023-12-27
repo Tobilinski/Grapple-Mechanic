@@ -222,7 +222,7 @@
                 {
                     "name": "",
                     "id": "eb6eca46-82e2-42fb-b56e-eb76ca02a5e9",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

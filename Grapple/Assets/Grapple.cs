@@ -23,7 +23,7 @@ public class Grapple : MonoBehaviour
     [Header("Mass Scale")]
     [SerializeField]
     private float MassScale;
-    [Header("Max and Min Distance Between Player and Grapple Point")]
+    [Header("Max and Min spring Length Between Player and Grapple Point")]
     [Space(10)]
     [SerializeField]
     private float MaxDistance;

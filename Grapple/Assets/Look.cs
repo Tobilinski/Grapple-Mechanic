@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Networking.PlayerConnection;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,12 +20,12 @@ public class Look : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         Player.Rotate(Vector3.up * x * lookSensit * Time.deltaTime);
 
        
@@ -33,6 +34,14 @@ public class Look : MonoBehaviour
         UDLRotation = Mathf.Clamp(UDLRotation,-70f, 60f);
         
         transform.localRotation = Quaternion.Euler(UDLRotation, 0f, 0f);
+        if (Input.GetJoystickNames()[0] == "Wireless Controller")
+        {
+           lookSensit = 225f;
+        }
+        else
+        {
+            lookSensit = 20f;
+        }
     }
     public void OnLook(InputAction.CallbackContext context)
     {
