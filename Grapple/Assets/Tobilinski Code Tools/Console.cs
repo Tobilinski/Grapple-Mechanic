@@ -84,6 +84,10 @@ namespace Tobilinski_Code_Tools
             }
         }
 
+        if (!_ConsoleParent.activeSelf  && !_PasswordParent.activeSelf)
+        {
+            Cursor.visible = false;
+        }
        
         
         //Input to send command.
