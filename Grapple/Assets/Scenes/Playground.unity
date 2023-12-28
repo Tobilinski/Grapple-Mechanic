@@ -550,7 +550,7 @@ MonoBehaviour:
     m_Bits: 64
   Camera: {fileID: 963194228}
   Gunpoint: {fileID: 1383018295}
-  RangeOfGun: 25
+  RangeOfGun: 30
   SpringForce: 10
   Damper: 1
   MassScale: 5

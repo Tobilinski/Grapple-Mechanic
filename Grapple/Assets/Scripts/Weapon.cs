@@ -8,37 +8,39 @@ using UnityEngine.InputSystem;
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public GameObject bulletPrefab;
     public LayerMask TargetLaymask;
     private LineRenderer _lineRenderer;
-    private Grapple _grapple;
+    private RaycastHit _hit;
     
     void Start()
     {
-        _grapple = GetComponent<Grapple>();
         _lineRenderer = GetComponent<LineRenderer>();
     }
 
-    
-   
+    private void LateUpdate()
+    {
+        if(_hit.collider != null)
+        {
+            _lineRenderer.SetPosition(0, firePoint.position);
+            _lineRenderer.SetPosition(1, _hit.collider.transform.position);
+        }
+    }
+
 
     public void OnShoot(InputAction.CallbackContext context)
     {
        
         if (context.performed)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, 100, TargetLaymask))
+           
+            if (Physics.Raycast(firePoint.position, firePoint.forward, out _hit, 100, TargetLaymask))
             {
                 //Destroy(hit.collider.gameObject);
                 print("Hit");
                 _lineRenderer.positionCount = 2;
-                
-                _lineRenderer.SetPosition(0, firePoint.position);
-                _lineRenderer.SetPosition(1, hit.collider.transform.position);
             }
         }
-        else if(context.canceled)
+        else
         {
             _lineRenderer.positionCount = 0;
         }
