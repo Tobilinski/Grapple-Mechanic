@@ -40,7 +40,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            rb.drag = 1f;
+            rb.drag = 2f;
         }
     }
 

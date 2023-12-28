@@ -82,12 +82,12 @@ public class Grapple : MonoBehaviour
         _lineRenderer.SetPosition(0, Gunpoint.position);
         _lineRenderer.SetPosition(1, _grapplePoint);
     }
-    public void Fire(InputAction.CallbackContext context)
+    public void OnGrapple(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             StartGrapple();
-            
+           
         }
         else if (context.canceled)
         {

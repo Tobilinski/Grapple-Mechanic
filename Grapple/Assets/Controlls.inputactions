@@ -24,9 +24,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
+                    "name": "Grapple",
                     "type": "Button",
                     "id": "38f8e095-d271-4f96-8adf-7e6bead522d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "bf1da648-ac01-46bb-b500-7abdd757b6df",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -215,7 +224,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -226,7 +235,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -237,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -248,7 +257,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -259,7 +268,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Fire",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -282,6 +291,61 @@
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9d730f8-be75-40e5-ad69-a2a3ddcfec64",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "252ed7b3-6eaa-4074-a137-9c4b4ef61b93",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db43ec00-1249-49ef-9ec5-1d91fb08b323",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "638ee2f4-3299-4bd3-9ccb-e49032c9c1ce",
+                    "path": "<Joystick>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b191b8d2-1af5-47b4-af78-7f4fe1c1dfa7",
+                    "path": "<XRController>/{PrimaryAction}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
