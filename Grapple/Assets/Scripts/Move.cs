@@ -1,6 +1,6 @@
-
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cursor = UnityEngine.Cursor;
 
 public class Move : MonoBehaviour
 {
@@ -13,6 +13,13 @@ public class Move : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+    }
+
+    private void Update()
+    {
+        toggleReturnKey();
     }
 
     void FixedUpdate()
@@ -41,6 +48,7 @@ public class Move : MonoBehaviour
         {
             rb.drag = 2f;
         }
+        
     }
 
     public void MoveForward(InputAction.CallbackContext context)
@@ -71,7 +79,13 @@ public class Move : MonoBehaviour
                 return true;
             }
         }
-        
         return false;
+    }
+    void toggleReturnKey()
+    {
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            Cursor.visible = !Cursor.visible;
+        }
     }
 }
