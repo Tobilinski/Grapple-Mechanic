@@ -40,7 +40,7 @@ public class Look : MonoBehaviour
         }
         else
         {
-            lookSensit = 20f;
+            lookSensit = 25f;
         }
     }
     public void OnLook(InputAction.CallbackContext context)

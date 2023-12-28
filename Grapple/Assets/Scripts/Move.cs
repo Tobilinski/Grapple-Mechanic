@@ -9,7 +9,6 @@ public class Move : MonoBehaviour
     private Rigidbody rb;
     private float jumpForce = 10f;
     public Transform groundchecker;
-    public LayerMask ground;
 
     private void Awake()
     {

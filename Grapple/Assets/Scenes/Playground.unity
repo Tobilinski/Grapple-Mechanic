@@ -550,11 +550,11 @@ MonoBehaviour:
     m_Bits: 64
   Camera: {fileID: 963194228}
   Gunpoint: {fileID: 1383018295}
-  RangeOfGun: 30
-  SpringForce: 10
+  RangeOfGun: 25
+  SpringForce: 4
   Damper: 1
   MassScale: 5
-  MaxDistance: 0.7
+  MaxDistance: 0.6
   MinDistance: 0.2
 --- !u!120 &420050835
 LineRenderer:
@@ -673,7 +673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1383018295}
-  bulletPrefab: {fileID: 4293825639460228268, guid: ba615ca1be6f81441b3b3dda0936180e, type: 3}
   TargetLaymask:
     serializedVersion: 2
     m_Bits: 128
