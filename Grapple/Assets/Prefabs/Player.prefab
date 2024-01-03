@@ -179,7 +179,7 @@ Transform:
   - {fileID: 5973505733132104588}
   - {fileID: 8246725940612192866}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5674705647295502371
 MeshFilter:
@@ -516,8 +516,8 @@ MonoBehaviour:
   SpringForce: 4
   Damper: 1
   MassScale: 5
-  MaxDistance: 0.6
-  MinDistance: 0.2
+  MaxDistance: 0.5
+  MinDistance: 0.1
 --- !u!114 &887103075604418279
 MonoBehaviour:
   m_ObjectHideFlags: 0
