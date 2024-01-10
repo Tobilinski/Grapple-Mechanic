@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1835,6 +1835,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356516370}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &408688228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 887103075604418279, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+  m_PrefabInstance: {fileID: 1026251970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea656e2c08cc0454098135910a5d1e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &409912582
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,6 +5504,46 @@ PrefabInstance:
     - target: {fileID: 4363916218962888840, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 98d59f4e-f31a-4a69-bd0f-1c874a4c4288
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: Player/Run[/Keyboard/leftShift]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 408688228}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Run
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Move, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9010379487670984575, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
       propertyPath: m_RootOrder

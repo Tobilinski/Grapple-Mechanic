@@ -5,10 +5,11 @@ using Cursor = UnityEngine.Cursor;
 public class Move : MonoBehaviour
 {
     private Vector2 _Direction;
-    private float speed = 10f;
+    private float speed = 5f;
     private Rigidbody rb;
     private float jumpForce = 10f;
     public Transform groundchecker;
+    private bool isRunning;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            rb.drag = 2f;
+            rb.drag = 6f;
         }
         
     }
@@ -62,6 +63,19 @@ public class Move : MonoBehaviour
             _Direction = Vector2.zero;
         }
     }
+    public void Run(InputAction.CallbackContext context)
+    {
+        if (context.performed && checkGround())
+        {
+            speed = 10f;
+        }
+        else if(context.canceled)
+        {
+          speed = 5f;
+        }
+    }
+
+    
     public void Jump(InputAction.CallbackContext context)
     {
         if (context.performed && checkGround())
@@ -69,6 +83,7 @@ public class Move : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         }
     }
+    
     bool checkGround()
     {
         RaycastHit hit;
