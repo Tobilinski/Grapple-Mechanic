@@ -1,9 +1,10 @@
+
+
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -11,19 +12,29 @@ public class Weapon : MonoBehaviour
     public LayerMask TargetLaymask;
     private LineRenderer _lineRenderer;
     private RaycastHit _hit;
-    
+    private int _killCount;
+    private Text _killCountText;
+    private Vector3 _oldTargetLocation;
     void Start()
     {
+        
         _lineRenderer = GetComponent<LineRenderer>();
+        _killCountText = GameObject.Find("KillCountText").GetComponent<Text>();
+    }
+
+    private void Update()
+    {
+        print(_oldTargetLocation);
     }
 
     private void LateUpdate()
     {
         if(_hit.collider != null)
         {
-            _lineRenderer.SetPosition(0, firePoint.position);
-            _lineRenderer.SetPosition(1, _hit.collider.transform.position);
+            
         }
+        
+        _killCountText.text = "Points: " + _killCount;
     }
 
 
@@ -35,14 +46,24 @@ public class Weapon : MonoBehaviour
            
             if (Physics.Raycast(firePoint.position, firePoint.forward, out _hit, 100, TargetLaymask))
             {
-                //Destroy(hit.collider.gameObject);
-                print("Hit");
-                _lineRenderer.positionCount = 2;
+                _oldTargetLocation = _hit.collider.transform.position;
+                StartCoroutine(LineDelay(0.1f));
+                _killCount++;
+                Destroy(_hit.collider.gameObject);
             }
         }
-        else
-        {
-            _lineRenderer.positionCount = 0;
-        }
+    }
+
+    private IEnumerator LineDelay(float Timer)
+    {
+        ShowKillLine();
+        yield return new WaitForSeconds(Timer);
+        _lineRenderer.positionCount = 0;
+    }
+    void ShowKillLine()
+    {
+        _lineRenderer.positionCount = 2; 
+        _lineRenderer.SetPosition(0, firePoint.position);
+        _lineRenderer.SetPosition(1, _oldTargetLocation);
     }
 }

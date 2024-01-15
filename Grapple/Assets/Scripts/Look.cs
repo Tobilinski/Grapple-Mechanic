@@ -10,13 +10,7 @@ public class Look : MonoBehaviour
 
     private float y;
     private float x;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +19,7 @@ public class Look : MonoBehaviour
        
         UDLRotation -= y * lookSensit * Time.deltaTime;
         
-        UDLRotation = Mathf.Clamp(UDLRotation,-70f, 60f);
+        UDLRotation = Mathf.Clamp(UDLRotation,-90f, 90f);
         
         transform.localRotation = Quaternion.Euler(UDLRotation, 0f, 0f);
         if (Input.GetJoystickNames()[0] == "Wireless Controller")
