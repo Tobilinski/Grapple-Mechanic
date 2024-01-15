@@ -103,4 +103,14 @@ public class Move : MonoBehaviour
             Cursor.visible = !Cursor.visible;
         }
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            //SceneManager.LoadScene("Level1");
+            transform.position = new Vector3(21.72f, 11.33f, 5.4f);
+        }
+    }
+   
 }

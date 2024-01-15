@@ -5880,7 +5880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9010379487670984575, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 88.35
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 9010379487670984575, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8714,7 +8714,7 @@ GameObject:
   - component: {fileID: 1450196488}
   m_Layer: 0
   m_Name: Cube (17)
-  m_TagString: Ground
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
