@@ -29,11 +29,6 @@ public class Weapon : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(_hit.collider != null)
-        {
-            
-        }
-        
         _killCountText.text = "Points: " + _killCount;
     }
 
@@ -43,7 +38,6 @@ public class Weapon : MonoBehaviour
        
         if (context.performed)
         {
-           
             if (Physics.Raycast(firePoint.position, firePoint.forward, out _hit, 100, TargetLaymask))
             {
                 _oldTargetLocation = _hit.collider.transform.position;

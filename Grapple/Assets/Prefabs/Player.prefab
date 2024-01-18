@@ -492,7 +492,19 @@ MonoBehaviour:
     m_ActionId: bf1da648-ac01-46bb-b500-7abdd757b6df
     m_ActionName: Player/Fire[/DualShock4GamepadHID/rightShoulder,/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 887103075604418279}
+        m_TargetAssemblyTypeName: Move, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 98d59f4e-f31a-4a69-bd0f-1c874a4c4288
     m_ActionName: Player/Run[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
@@ -518,7 +530,7 @@ MonoBehaviour:
   Camera: {fileID: 5973505733132104588}
   Gunpoint: {fileID: 4745450548014483035}
   RangeOfGun: 25
-  SpringForce: 4
+  SpringForce: 2
   Damper: 1
   MassScale: 5
   MaxDistance: 0.5

@@ -5,7 +5,7 @@ using Cursor = UnityEngine.Cursor;
 public class Move : MonoBehaviour
 {
     private Vector2 _Direction;
-    private float speed = 5f;
+    private float speed = 7f;
     private Rigidbody rb;
     private float jumpForce = 10f;
     public Transform groundchecker;
@@ -30,7 +30,6 @@ public class Move : MonoBehaviour
 
         // Project the forward direction onto the horizontal plane
         forwardDirection.y = 0f;
-        forwardDirection.Normalize();
 
         // Calculate the movement vector in world space
         Vector3 movement = new Vector3(_Direction.x, 0f, _Direction.y);
@@ -47,7 +46,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            rb.drag = 6f;
+            rb.drag = 7f;
         }
         
     }
@@ -67,11 +66,11 @@ public class Move : MonoBehaviour
     {
         if (context.performed && checkGround())
         {
-            speed = 10f;
+            speed = 12f;
         }
         else if(context.canceled)
         {
-          speed = 5f;
+          speed = 7f;
         }
     }
 
