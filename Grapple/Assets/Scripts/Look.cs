@@ -5,12 +5,17 @@ using UnityEngine.InputSystem;
 public class Look : MonoBehaviour
 {
     public Transform Player;
+    [SerializeField]
     private float lookSensit = 20f;
-
-    float UDLRotation;
+    private float _RotationVelocityOnY;
+    private float _RotationVelocityOnX;
+    float _UDLRotation;
+    float _LRRoatation;
 
     private float y;
     private float x;
+
+    private float xRotation = 0f;
 
     private void Start()
     {
@@ -20,14 +25,16 @@ public class Look : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Player.Rotate(Vector3.up * x * lookSensit * Time.deltaTime);
-
-       
-        UDLRotation -= y * lookSensit * Time.deltaTime;
+        _LRRoatation -= x * lookSensit * Time.deltaTime;
+        Player.transform.localRotation = Quaternion.Euler(0f, Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_LRRoatation, ref _RotationVelocityOnX, 0f), 0f);
         
-        UDLRotation = Mathf.Clamp(UDLRotation,-90f, 90f);
         
-        transform.localRotation = Quaternion.Euler(UDLRotation, 0f, 0f);
+        _UDLRotation -= y * lookSensit * Time.deltaTime;
+        
+        _UDLRotation = Mathf.Clamp(_UDLRotation,-90f, 90f);
+        
+        transform.localRotation = Quaternion.Euler(Mathf.SmoothDampAngle(transform.localEulerAngles.y, _UDLRotation, ref _RotationVelocityOnY, 0f), 0f, 0f);
+        
         try
         {
             string[] joystickNames = Input.GetJoystickNames();
