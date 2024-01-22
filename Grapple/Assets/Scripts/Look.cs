@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,12 @@ public class Look : MonoBehaviour
 
     private float y;
     private float x;
-    
+
+    private void Start()
+    {
+        y = 90f;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,14 +28,23 @@ public class Look : MonoBehaviour
         UDLRotation = Mathf.Clamp(UDLRotation,-90f, 90f);
         
         transform.localRotation = Quaternion.Euler(UDLRotation, 0f, 0f);
-        if (Input.GetJoystickNames()[0] == "Wireless Controller")
+        try
         {
-           lookSensit = 225f;
+            string[] joystickNames = Input.GetJoystickNames();
+            if (joystickNames[0] == "Wireless Controller")
+            {
+                lookSensit = 225f;
+            }
+            else
+            {
+                lookSensit = 20f;
+            }
         }
-        else
+        catch (Exception e)
         {
-            lookSensit = 20f;
+            Console.WriteLine(e);
         }
+       
     }
     public void OnLook(InputAction.CallbackContext context)
     {

@@ -21,10 +21,6 @@ public class Move : MonoBehaviour
     private void Update()
     {
         toggleReturnKey();
-    }
-
-    void FixedUpdate()
-    {
         // Get the world space forward direction
         Vector3 forwardDirection = transform.forward;
 
@@ -39,7 +35,11 @@ public class Move : MonoBehaviour
         {
             rb.velocity = new Vector3(movement.x * speed, rb.velocity.y, movement.z * speed);
         }
-        
+
+    }
+
+    void FixedUpdate()
+    {
         if (!checkGround())
         {
             rb.drag = 0f;

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Grapple : MonoBehaviour
 {
+   
     private LineRenderer _lineRenderer;
     private Vector3 _grapplePoint;
     public LayerMask WhatIsGrappleable;
@@ -37,7 +38,7 @@ public class Grapple : MonoBehaviour
     }
 
     // Update is called once per frame
-   
+  
 
     private void LateUpdate()
     {
@@ -50,7 +51,10 @@ public class Grapple : MonoBehaviour
         if (Physics.Raycast(Gunpoint.position, Gunpoint.forward, out hit, RangeOfGun, WhatIsGrappleable))
         {
             _grapplePoint = hit.point;
-            Joint = gameObject.AddComponent<SpringJoint>();
+            if (Joint == null)
+            {
+                Joint = gameObject.AddComponent<SpringJoint>();
+            }
             Joint.autoConfigureConnectedAnchor = false;
             Joint.connectedAnchor = _grapplePoint;
             
@@ -65,6 +69,7 @@ public class Grapple : MonoBehaviour
             Joint.damper = Damper;
             Joint.massScale = MassScale;
             _lineRenderer.positionCount = 2;
+            //used in GunRotate script
             isGrapple = true;
         }
     }
@@ -84,10 +89,9 @@ public class Grapple : MonoBehaviour
     }
     public void OnGrapple(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
             StartGrapple();
-           
         }
         else if (context.canceled)
         {

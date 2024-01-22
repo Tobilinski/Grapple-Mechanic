@@ -22,10 +22,10 @@ public class Weapon : MonoBehaviour
         _killCountText = GameObject.Find("KillCountText").GetComponent<Text>();
     }
 
-    private void Update()
+    /*private void Update()
     {
-        print(_oldTargetLocation);
-    }
+       
+    }*/
 
     private void LateUpdate()
     {
