@@ -36,7 +36,7 @@ public class Move : MonoBehaviour
         Vector3 movement = new Vector3(_Direction.x, 0f, _Direction.y);
         movement = Quaternion.FromToRotation(Vector3.forward, forwardDirection) * movement;
         
-        if (_Direction != Vector2.zero)
+        if (_Direction != Vector2.zero && checkGround())
         {
             rb.velocity = new Vector3(movement.x * speed, rb.velocity.y, movement.z * speed);
         }
