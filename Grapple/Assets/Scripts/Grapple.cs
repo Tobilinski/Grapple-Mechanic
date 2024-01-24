@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+[RequireComponent(typeof(LineRenderer))]
 public class Grapple : MonoBehaviour
 {
    

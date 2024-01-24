@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(LineRenderer))]
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;

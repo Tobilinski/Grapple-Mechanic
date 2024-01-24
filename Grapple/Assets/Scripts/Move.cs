@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Cursor = UnityEngine.Cursor;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Move : MonoBehaviour
 {
     private Vector2 _Direction;
@@ -22,8 +23,6 @@ public class Move : MonoBehaviour
     {
         toggleReturnKey();
         // Get the world space forward direction
-       
-
     }
 
     void FixedUpdate()
@@ -47,9 +46,8 @@ public class Move : MonoBehaviour
         }
         else
         {
-            rb.drag = 7f;
+            rb.drag = 8f;
         }
-        
     }
 
     public void MoveForward(InputAction.CallbackContext context)

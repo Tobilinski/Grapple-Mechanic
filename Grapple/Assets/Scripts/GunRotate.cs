@@ -11,7 +11,7 @@ public class GunRotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(!Grapple.isGrapple)
         {

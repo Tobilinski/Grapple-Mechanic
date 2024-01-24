@@ -16,25 +16,29 @@ public class Look : MonoBehaviour
     private float x;
 
     private float xRotation = 0f;
-
+    
     private void Start()
     {
-        y = 90f;
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+       
+    }
+
+    private void FixedUpdate()
     {
         _LRRoatation -= x * lookSensit * Time.deltaTime;
-        Player.transform.localRotation = Quaternion.Euler(0f, Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_LRRoatation, ref _RotationVelocityOnX, 0f), 0f);
-        
-        
         _UDLRotation -= y * lookSensit * Time.deltaTime;
-        
         _UDLRotation = Mathf.Clamp(_UDLRotation,-90f, 90f);
-        
         transform.localRotation = Quaternion.Euler(Mathf.SmoothDampAngle(transform.localEulerAngles.y, _UDLRotation, ref _RotationVelocityOnY, 0f), 0f, 0f);
-        
+        Player.transform.localRotation = Quaternion.Euler(0f, Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_LRRoatation, ref _RotationVelocityOnX, 0f), 0f);
+       
+    }
+    // Update is called once per frame
+    void LateUpdate()
+    {
         try
         {
             string[] joystickNames = Input.GetJoystickNames();
@@ -51,8 +55,10 @@ public class Look : MonoBehaviour
         {
             Console.WriteLine(e);
         }
-       
     }
+    
+    
+
     public void OnLook(InputAction.CallbackContext context)
     {
         if (context.performed)
