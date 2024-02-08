@@ -272,9 +272,9 @@ MonoBehaviour:
     LOOK - Right
     Joystick
 
-    Grapple - R1 on yellow blocks
+    Grapple - R2 on yellow blocks
 
-    Shoot - R2 on pink spheres
+    Shoot - R1 on pink spheres
 
 '
 --- !u!1 &8229671120785726875
