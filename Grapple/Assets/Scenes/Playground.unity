@@ -576,6 +576,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2719279792717812421, guid: 231434c3b0765dc4995ccfe3b9073bf6, type: 3}
   m_PrefabInstance: {fileID: 213296953}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &223974226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6249255293118248528, guid: ac9cfd06fbd914a429d32ec37c7b2345, type: 3}
+  m_PrefabInstance: {fileID: 838352053711787355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243754078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,6 +5120,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2719279792717812421, guid: 231434c3b0765dc4995ccfe3b9073bf6, type: 3}
   m_PrefabInstance: {fileID: 199730802}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1828601335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8245239747440056419, guid: ac9cfd06fbd914a429d32ec37c7b2345, type: 3}
+  m_PrefabInstance: {fileID: 838352053711787355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1836009284
 GameObject:
   m_ObjectHideFlags: 0
@@ -6001,6 +6011,18 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2824050391130680858, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: text.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824050391130680858, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: text.Array.data[0]
+      value: 
+      objectReference: {fileID: 1828601335}
+    - target: {fileID: 2824050391130680858, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
+      propertyPath: text.Array.data[1]
+      value: 
+      objectReference: {fileID: 223974226}
     - target: {fileID: 4363916218962888840, guid: 9dd70bc66aa5d26469a8817ae47e6bfe, type: 3}
       propertyPath: m_Name
       value: Player
