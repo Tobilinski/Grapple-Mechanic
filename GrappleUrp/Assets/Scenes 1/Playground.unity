@@ -6496,7 +6496,7 @@ PrefabInstance:
     - target: {fileID: 6304027608830135038, guid: 9dd70bc66aa5d26469a8817ae47e6bfe,
         type: 3}
       propertyPath: TargetLaymask.m_Bits
-      value: 0
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6633799503646985438, guid: 9dd70bc66aa5d26469a8817ae47e6bfe,
         type: 3}
