@@ -15,14 +15,11 @@ public class GunRotate : MonoBehaviour
     {
         if(!Grapple.isGrapple)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, transform.parent.rotation, 5f * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, transform.parent.rotation, 5f * Time.fixedDeltaTime);
         }
         else
         {
             transform.LookAt(script.GetGrapplePoint());
         }
-
-
-
     }
 }
