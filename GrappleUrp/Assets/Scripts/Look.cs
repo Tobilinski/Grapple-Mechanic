@@ -15,8 +15,11 @@ public class Look : MonoBehaviour
     private float y;
     private float x;
 
-    private float xRotation = 0f;
     
+
+    private Vector2 accumulatedDelta = Vector2.zero;
+
+
     private void Start()
     {
         
@@ -24,21 +27,27 @@ public class Look : MonoBehaviour
 
     private void Update()
     {
-        _LRRoatation -= x * lookSensit * Time.deltaTime;
-        _UDLRotation -= y * lookSensit * Time.deltaTime;
-        _UDLRotation = Mathf.Clamp(_UDLRotation,-90f, 90f);
-        transform.localRotation = Quaternion.Euler(Mathf.SmoothDampAngle(transform.localEulerAngles.y, _UDLRotation, ref _RotationVelocityOnY, 0f), 0f, 0f);
-        Player.transform.localRotation = Quaternion.Euler(0f, Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_LRRoatation, ref _RotationVelocityOnX, 0f), 0f);
+        
     }
 
     private void FixedUpdate()
     {
-       
-       
+       // Apply accumulated delta to rotation
+    _LRRoatation -= accumulatedDelta.x * Time.deltaTime;
+    _UDLRotation += accumulatedDelta.y * Time.deltaTime;
+
+    // Clamp vertical rotation
+    _UDLRotation = Mathf.Clamp(_UDLRotation, -90f, 90f);
+
+    // Reset accumulated delta
+    accumulatedDelta = Vector2.zero;
     }
     // Update is called once per frame
     void LateUpdate()
     {
+        
+        transform.localRotation = Quaternion.Euler(Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_UDLRotation, ref _RotationVelocityOnY, 0f), 0f, 0f);
+        Player.transform.localRotation = Quaternion.Euler(0f, Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_LRRoatation, ref _RotationVelocityOnX, 0f), 0f);
         try
         {
             string[] joystickNames = Input.GetJoystickNames();
@@ -54,22 +63,21 @@ public class Look : MonoBehaviour
         catch (Exception e)
         {
             Console.WriteLine(e);
-        }
+        }      
     }
     
     
 
     public void OnLook(InputAction.CallbackContext context)
+{
+    if (context.performed)
     {
-        if (context.performed)
-        {
-            y = context.ReadValue<Vector2>().y;
-            x = context.ReadValue<Vector2>().x;
-        }
-        else if (context.canceled)
-        {
-            y = 0f;
-            x = 0f;
-        }
+        Vector2 delta = context.ReadValue<Vector2>() * lookSensit; // Apply sensitivity
+        accumulatedDelta += delta;
     }
+    else if (context.canceled)
+    {
+        accumulatedDelta = Vector2.zero;
+    }
+}
 }
