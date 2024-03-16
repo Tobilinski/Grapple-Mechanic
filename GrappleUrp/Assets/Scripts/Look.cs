@@ -6,7 +6,7 @@ public class Look : MonoBehaviour
 {
     public Transform Player;
     [SerializeField]
-    private float lookSensit = 20f;
+    private float lookSensit;
     private float _RotationVelocityOnY;
     private float _RotationVelocityOnX;
     float _UDLRotation;
@@ -18,17 +18,6 @@ public class Look : MonoBehaviour
     
 
     private Vector2 accumulatedDelta = Vector2.zero;
-
-
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
 
     private void FixedUpdate()
     {
@@ -72,7 +61,7 @@ public class Look : MonoBehaviour
 {
     if (context.performed)
     {
-        Vector2 delta = context.ReadValue<Vector2>() * lookSensit; // Apply sensitivity
+        Vector2 delta = context.ReadValue<Vector2>() * lookSensit; // Applies sensitivity
         accumulatedDelta += delta;
     }
     else if (context.canceled)
