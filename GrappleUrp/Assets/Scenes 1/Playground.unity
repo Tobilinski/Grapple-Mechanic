@@ -6478,6 +6478,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4363916218962888840, guid: 9dd70bc66aa5d26469a8817ae47e6bfe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5265191415987539457, guid: 9dd70bc66aa5d26469a8817ae47e6bfe,
         type: 3}
       propertyPath: m_ActionEvents.Array.size
