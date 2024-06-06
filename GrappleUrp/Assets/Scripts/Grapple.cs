@@ -13,30 +13,24 @@ public class Grapple : MonoBehaviour
    
     private LineRenderer _lineRenderer;
     private Vector3 _grapplePoint;
-    public LayerMask WhatIsGrappleable;
-    public Transform Camera , Gunpoint;
+    [SerializeField] private LayerMask WhatIsGrappleable;
+    [SerializeField] private Transform Camera , Gunpoint;
     private SpringJoint Joint;
     static public bool isGrapple;
     [Header("Grapple Settings")]
     [Space(10)]
     [Header("Range of Gun")]
-    [SerializeField]
-    private float RangeOfGun;
+    [SerializeField] private float RangeOfGun;
     [Header("Spring Force")]
-    [SerializeField]
-    private float SpringForce;
+    [SerializeField] private float SpringForce;
     [Header("Damper")]
-    [SerializeField]
-    private float Damper;
+    [SerializeField] private float Damper;
     [Header("Mass Scale")]
-    [SerializeField]
-    private float MassScale;
+    [SerializeField] private float MassScale;
     [Header("Max and Min spring Length Between Player and Grapple Point")]
     [Space(10)]
-    [SerializeField]
-    private float MaxDistance;
-    [SerializeField]
-    private float MinDistance;
+    [SerializeField] private float MaxDistance;
+    [SerializeField] private float MinDistance;
     
     // Start is called before the first frame update
     void Start()

@@ -4,18 +4,13 @@ using UnityEngine.InputSystem;
 
 public class Look : MonoBehaviour
 {
-    public Transform Player;
-    [SerializeField]
-    private float lookSensit;
+    [SerializeField] private Transform Player;
+
+    [SerializeField] private float lookSensit;
     private float _RotationVelocityOnY;
     private float _RotationVelocityOnX;
     float _UDLRotation;
     float _LRRoatation;
-
-    private float y;
-    private float x;
-
-    
 
     private Vector2 accumulatedDelta = Vector2.zero;
 
@@ -34,7 +29,6 @@ public class Look : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        
         transform.localRotation = Quaternion.Euler(Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_UDLRotation, ref _RotationVelocityOnY, 0f), 0f, 0f);
         Player.transform.localRotation = Quaternion.Euler(0f, Mathf.SmoothDampAngle(transform.localEulerAngles.y, -_LRRoatation, ref _RotationVelocityOnX, 0f), 0f);
         try
