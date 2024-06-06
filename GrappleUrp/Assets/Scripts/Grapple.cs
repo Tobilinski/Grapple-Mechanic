@@ -1,5 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+public interface IInteractable
+{
+    void Interact();
+    void Expand();
+}
+
 [RequireComponent(typeof(LineRenderer))]
 public class Grapple : MonoBehaviour
 {
@@ -71,6 +78,11 @@ public class Grapple : MonoBehaviour
             _lineRenderer.positionCount = 2;
             //used in GunRotate script
             isGrapple = true;
+            IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                interactable.Expand();
+            }
         }
     }
 
@@ -102,5 +114,14 @@ public class Grapple : MonoBehaviour
     public Vector3 GetGrapplePoint()
     {
         return _grapplePoint;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            interactable.Interact();
+        }
     }
 }
