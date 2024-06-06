@@ -1,14 +1,15 @@
+
+
 using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
 [RequireComponent(typeof(LineRenderer))]
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private LayerMask TargetLaymask;
-    [SerializeField] private Transform firePoint;
+    public Transform firePoint;
+    public LayerMask TargetLaymask;
     private LineRenderer _lineRenderer;
     private RaycastHit _hit;
     private int _killCount;
